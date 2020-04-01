@@ -1,0 +1,45 @@
+<%- include('includes/head.ejs') %>
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <div class='container'>
+        <% if (posts.length > 0) { %>
+            <% for (let post of posts) { %>
+                <div class='post-container latest-container'>
+                    <h3 class='post-title latest-title'><%= post.description %></h3>
+                    <div class='post-container-content'>
+                        <div class='share-arrow'>
+                            <p><</p>
+                        </div>
+                        <div class='post-container-content-share latest'>
+                            <div class='letter'>S</div>
+                            <div class='letter'>H</div>
+                            <div class='letter'>A</div>
+                            <div class='letter'>R</div>
+                            <div class='letter bottom-letter'>E</div>
+                        </div>
+                        <img class='post-image latest-image' src="<%= post.imageUrl %>" alt='hotdogs'>
+                        <div class='post-container-content-recipe latest'>
+                            <div class='letter'>R</div>
+                            <div class='letter'>E</div>
+                            <div class='letter'>C</div>
+                            <div class='letter'>I</div>
+                            <div class='letter'>P</div>
+                            <div class='letter bottom-letter'>E</div>
+                        </div>
+                        <div class='recipe-arrow'>
+                            <p>></p>
+                        </div>
+                    </div>
+                    <div class='post-container-bottom latest'>
+                        <div class='icon-color-pop'><img class='icon' src="images/thumbs-up.png"></div>
+                        <div class='icon-color-pop'><img class='icon' src="images/thumbs-down.png"></div>
+                        <div class='icon-color-pop'><img class='icon' src="images/comment.png"></div>
+                    </div>
+                    <p class="post-date latest-date"><%= post.date %></p>
+                </div>
+                <div class='underline'></div>
+                <% } %>
+            <% } %>
+    </div>
+</body>
+</html>
